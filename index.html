@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Películas Cristianas</title>
+
+<style>
+
+body{
+background:#0b1a2a;
+color:white;
+font-family:Arial;
+padding:30px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+/* TARJETA */
+
+.card{
+position:relative;
+cursor:pointer;
+border-radius:15px;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+filter:brightness(70%);
+}
+
+/* BOTON PLAY */
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:50px;
+color:white;
+opacity:0;
+transition:0.3s;
+}
+
+.card:hover .play{
+opacity:1;
+}
+
+/* OVERLAY VIDEO */
+
+#overlay{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+z-index:1000;
+}
+
+#overlay iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+/* BOTON CERRAR */
+
+#cerrar{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
+z-index:2000;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>PELÍCULAS CRISTIANAS</h1>
+
+<div class="grid">
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12496528738927')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYa1q3ji6yIG8IlFXzeIJwfm0MmuTzLEsEAyr5JvmFsvA&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12496566356591')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYu1rgpyIIBnw0-YuxQc5964uvpnFYwoPAMrBYfVo4Uy8&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12496548334191')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY043hDb9F8h4RthtNKwo8bFSnvfdDuKf5R4f7SMLpb7g&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12496582871663')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYPvUlkrMpBC2KUbabPl-TwVwjLw-sJQgjccBJi_PKbR8&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12353613466223')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYRkOWwFn-biQIqxi81iiOAXRgtKa1OSc9AQb1uP7CWFc&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12354242284143')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYjZm9-Li_xQFZdvNr5ZsZdWFEbw8kU52Vlle_ItSzvxk&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12354117438063')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYk760S3K2WWSNu913DdW_Ms0f6PCwd1pKQTJhL0KUNzQ&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12354623048303')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYKoTHOcWEGuCjKn8TP8KfdAXb7Pg8vXWt8Yo1k7zZwGA&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12193511180911')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYhKV3XQe8RbfxzSoMG3WjBNv6Zv5ZVeHg8Mf7lmXCcJs&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12193653787247')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYotcEbHvEBIDmwXsbI1c1kan0YnuYH2vTIO1E6RgPq5I&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12193697892975')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY6J8T1AScOWZ1w5DXfd8fryb6pM5BG5AxsZC7usGJ63g&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12193811139183')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY9BbMf2zx0zSGYMuQFhuhrpDJv4G7OeE0eH7O2uYWvNE&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12036213574255')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYOPJNhFCkACKUU6TjWXyJRdJg9xnVszU2bjA4UhC25Sw&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12036558948975')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYqENNAUtw5gmAaOWD2NbDVLjt-FuGaaiR3y3uQsp0Xr0&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12036763814511')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYadBDHo9Y87NUEsvGdiNsprzB7kD7U6lVf1an_ix5E24&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/12036889840239')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYlxzrQuZzI_7LPA3YJvuR2izN3_prgaIjIUXHz2J47mY&fn=external_7">
+<div class="play">▶</div>
+</div>
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11896593058415')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYh15gLrJwXSEIxrhgUksGR4We3FBZPtp1Wcioq387I3k&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11896861559407')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYa8C-nEQPiM0gx4U97lvLTLdLtPJUevJ3gT-gFm9PO2c&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11896978213487')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYS5XUQJ4i20ynkSka2wInklSW1ZAauvE2PNc1lnSjFTI&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11897080187503')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY4u8K_sy1TJ_WJn1xK8wsAEcn04AVugQ2LDE4mjo88aA&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11766705752687')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYPFNwqy6alvP2WciNxjInTb-ir7JeE6hKom0UOLU5hio&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11766906489455')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYf9l6SxQsBoAhNaLpqyNGRIbSyKoUqusBvIFxR1bXSdM&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11767038741103')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY7jb-YuzUwVjgOf_w38Sg8wAKAOmZ1Hl_aawh-SvHv6A&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11639738731119')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYAzZSqMVe0r6ViwRGWN2dWpDQVmkSFIYLlQ0HIR1XU3I&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11639738731119')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYLI_09wgBuernYhloLOeZoE89Xw1i55h5L9C1mrlaEJI&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11640296639087')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYa8C-nEQPiM0gx4U97lvLTLdLtPJUevJ3gT-gFm9PO2c&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11641057512047')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYU9Dx0HDOfG37qfak7d4OkDpttP6AugNNLvhIcVfyySk&fn=external_7">
+<div class="play">▶</div>
+</div>
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11522961312367')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYXFTBHLTJEMF0WihrBW4fY4j8SnQRYw9QpoT8dGDL_SE&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11522412644975')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYTS23VrgFZYdxBdV7E4dsdiygyLNxv5AJ6q1g9pZeluk&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11522523990639')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYGCtItQza1mS4Hvru0LnPbl98cq7vm_-ol3B_Myeha2Y&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11522587298415')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYEUO0Y0vEjMQqwnG-wwnhmuf5r7YuiH6_2kIBlWOoqsM&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11326172105327')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYZXyQXXi4LQxscQcl_EzZVTpoIKKEAc3BHbMu4e_a8VM&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11326873799279')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYJEpXS_drGXqt14e0DzthETYAbAeM1DkQzZ1B1XA2QoY&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11326763043439')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgY2FMSfC6HaJ9uIn7iA7FcnBiHP5Fh7mOBYZ-myAXQtoA&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+<div class="card" onclick="verVideo('https://ok.ru/videoembed/11326831200879')">
+<img src="https://iv.okcdn.ru/i?r=BDFSTM1h2o92P_v-s8DgGlgYwYoM1u-MBvEIWQHWWUB-j4HgHAYzgHLq_T_IQ9pLyks&fn=external_7">
+<div class="play">▶</div>
+</div>
+
+</div>
+
+<div id="overlay">
+
+<div id="cerrar" onclick="cerrarVideo()">✕</div>
+
+<iframe
+id="videoFrame"
+tabindex="0"
+allow="autoplay; fullscreen; encrypted-media"
+allowfullscreen
+frameborder="0">
+</iframe>
+
+</div>
+
+<script>
+
+function verVideo(link){
+
+let overlay = document.getElementById("overlay");
+let frame = document.getElementById("videoFrame");
+
+overlay.style.display="block";
+
+let embed = link.replace("/video/","/videoembed/") + "?autoplay=1";
+
+frame.src = embed;
+
+/* permitir control remoto */
+setTimeout(()=>{
+frame.focus();
+},500);
+
+if(frame.requestFullscreen){
+frame.requestFullscreen();
+}
+
+}
+
+function cerrarVideo(){
+
+let overlay = document.getElementById("overlay");
+let frame = document.getElementById("videoFrame");
+
+overlay.style.display="none";
+frame.src="";
+
+if(document.fullscreenElement){
+document.exitFullscreen();
+}
+
+}
+
+</script>
+
+</body>
+</html>
